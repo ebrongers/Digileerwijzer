@@ -1,0 +1,216 @@
+
+
+
+
+/* General Definitions ------------------------------- */
+
+.redtext {
+	color: #ff0000;
+}
+
+
+
+
+
+/* Top Title Text Definitons ------------------------- */
+
+div#titlecontainer h1,
+div#titlecontainer h2,
+div#titlecontainer h3,
+div#titlecontainer h4,
+div#titlecontainer h5,
+div#titlecontainer h6,
+div#titlecontainer p  {
+	font-family: 'Vast Shadow', cursive;
+	font-style: normal;
+	text-transform: uppercase;
+	font-size: 39px;
+	line-height: 39px;
+	color: #fff;
+	font-weight: 400;
+	text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+/* Header Text Definitions ---------------------------- */
+
+div#maincontainer h1  {
+	font-family: 'Amatic SC', cursive;
+	font-style: normal;
+	font-weight: 700;
+	font-size: 76px;
+	text-transform: none;
+	text-decoration: none;
+	letter-spacing: 0em;
+	word-spacing: 0em;
+	line-height: 78px;
+	display: inline;
+}
+
+
+div#maincontainer h2  {
+	font-family: 'Amatic SC', cursive;
+	font-style: normal;
+	font-weight: 700;
+	font-size: 62px;
+	text-transform: none;
+	text-decoration: none;
+	letter-spacing: 0em;
+	word-spacing: 0em;
+	line-height: 64px;
+	display: inline;
+}
+
+
+div#maincontainer h3  {
+	font-family: 'Amatic SC', cursive;
+	font-style: normal;
+	font-weight: 700;
+	font-size: 56px;
+	text-transform: none;
+	text-decoration: none;
+	letter-spacing: 0em;
+	word-spacing: 0em;
+	line-height: 58px;
+	display: inline;
+}
+
+
+div#maincontainer h4  {
+	font-family: 'Amatic SC', cursive;
+	font-style: normal;
+	font-weight: 700;
+	font-size: 46px;
+	text-transform: none;
+	text-decoration: none;
+	letter-spacing: 0em;
+	word-spacing: 0em;
+	line-height: 48px;
+	display: inline;
+}
+
+
+div#maincontainer h5  {
+	font-family: 'Amatic SC', cursive;
+	font-style: normal;
+	font-weight: 700;
+	font-size: 36px;
+	text-transform: none;
+	text-decoration: none;
+	letter-spacing: 0em;
+	word-spacing: 0em;
+	line-height: 38px;
+	display: inline;
+}
+
+
+div#maincontainer h6  {
+	font-family: 'Amatic SC', cursive;
+	font-style: normal;
+	font-weight: 700;
+	font-size: 30px;
+	text-transform: none;
+	text-decoration: none;
+	letter-spacing: 0em;
+	word-spacing: 0em;
+	line-height: 32px;
+	display: inline;
+}
+
+
+
+
+
+
+
+/* Main Body Copy Text Definitions ---------------------- */
+
+div#maincontainer p  {
+	font-family: 'Gentium Basic', serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	text-transform: none;
+	text-decoration: none;
+	letter-spacing: 0em;
+	word-spacing: 0em;
+	line-height: 21px;
+}
+
+
+div#maincontainer {
+	font-family: 'Gentium Basic', serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	text-transform: none;
+	text-decoration: none;
+	letter-spacing: 0em;
+	word-spacing: 0em;
+	line-height: 21px;
+}
+
+
+div#maincontainer a:hover  {
+	color: #003366;
+	text-decoration: none;
+	background: #99ff66;
+}
+
+
+div#maincontainer a {
+	color: #009900;
+	text-decoration: underline;
+}
+
+
+
+
+
+
+
+/* Footer ------------------------------------------- */
+
+div#footercontent_containter,
+div#footercontent_containter p {
+	font-family: 'Amatic SC', cursive;
+	font-style: normal;
+	font-weight: 700;
+	font-size: 36px;
+	text-transform: none;
+	text-decoration: none;
+	letter-spacing: 0em;
+	word-spacing: 0em;
+	line-height: 38px;
+	color: #009900;
+
+}
+
+
+div#footercontent_containter a:hover {
+	color: #ff0000;
+	text-decoration: none;
+}
+
+
+div#footercontent_containter a {
+	color: #006600;
+	text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+

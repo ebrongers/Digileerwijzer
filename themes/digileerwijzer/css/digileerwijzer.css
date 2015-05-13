@@ -1,0 +1,697 @@
+body {
+  background-color: #707070;
+  font-family:'Open Sans', sans-serif;
+  color: #333;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 300;
+}
+h1 {
+  margin: 20px 20px 10px;
+  font-family: Exo, sans-serif;
+  color: white;
+  font-size: 36px;
+  line-height: 44px;
+  font-weight: 700;
+}
+h2 {
+  margin-bottom: 10px;
+  font-family:'Open Sans', sans-serif;
+  color: white;
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 700;
+}
+h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-family:'Open Sans', sans-serif;
+  color: #525252;
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 600;
+}
+h4 {
+  padding-top: 4px;
+  padding-bottom: 6px;
+  color: #82267d;
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: 700;
+  text-align: left;
+}
+h5 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 700;
+}
+h6 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 700;
+}
+p {
+  line-height: 22px;
+}
+.button {
+  display: inline-block;
+  width: 130px;
+  padding: 10px 20px;
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+}
+.button.volgende {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-left: 10px;
+  float: right;
+  background-image: url('../images/buttonVolgende.svg');
+  background-repeat: no-repeat;
+  font-size: 16px;
+  font-weight: 700;
+}
+.button.volgende:hover {
+  background-image: url('../images/buttonVolgendeHover.svg');
+}
+.button.vorige {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-right: 10px;
+  background-image: url('../images/buttonVorige.svg');
+}
+.button.vorige:hover {
+  background-image: url('../images/buttonVorigeHover.svg');
+}
+.button.vorige.terug {
+  margin-top: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  float: left;
+  background-image: url('../images/buttonTerugScenarios.svg');
+}
+.button.vorige.terug:hover {
+  background-image: url('../images/buttonTerugScenariosHover.svg');
+}
+.button.profiel {
+  width: 100%;
+  background-color: #3d6892;
+  font-weight: 400;
+}
+.button.profiel.grey {
+	background-color: #ddd;
+}
+
+
+.header {
+  background-color: #fffcff;
+}
+.contentcontainer {
+  padding: 10px 20px 20px;
+  background-color: #853e82;
+}
+.vragencontainer {
+  padding-right: 20px;
+  padding-bottom: 0px;
+  padding-left: 20px;
+  background-color: white;
+}
+.vraagheader {
+  float: left;
+  clear: both;
+}
+.vraagintro {
+  margin-bottom: 20px;
+  clear: both;
+  font-family:'Open Sans', sans-serif;
+  color: #575757;
+  font-size: 16px;
+  font-weight: 300;
+}
+.vraagtekst {
+  float: left;
+  clear: both;
+  font-family:'Open Sans', sans-serif;
+  color: #593057;
+  font-size: 16px;
+  line-height: 23px;
+  font-weight: 300;
+}
+.vraagantwoord {
+  width: 10%;
+  float: right;
+  text-align: center;
+}
+.vraagvolgende {
+  float: right;
+  clear: both;
+}
+.onderwerpintro {
+  margin-bottom: 20px;
+  font-family:'Open Sans', sans-serif;
+  color: white;
+  font-size: 14px;
+  font-weight: 300;
+}
+.onderwerpintro.intro {
+  font-weight: 700;
+}
+.antwoordtekst {
+  width: 85%;
+  margin-bottom: 20px;
+  float: left;
+  color: #592957;
+  font-weight: 400;
+}
+.antwoorduitleg {
+  margin-bottom: 20px;
+  float: left;
+  font-family:'Open Sans', sans-serif;
+  color: #b5b5b5;
+  font-size: 12px;
+  font-weight: 300;
+}
+.onderstreeptintekst {
+  font-weight: 700;
+  text-decoration: underline;
+}
+.vraagholder {
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #ededed;
+}
+.line {
+  height: 1px;
+  margin-bottom: 20px;
+  clear: both;
+}
+.line.paars {
+  background-color: #853e82;
+}
+.line.wit {
+  background-color: white;
+}
+.navigatiecontainer {
+  padding: 30px 20px;
+  background-color: white;
+}
+.profielcontainer {
+  padding: 20px;
+  background-color: white;
+}
+.profielholder {
+  margin-top: 0px;
+  padding: 20px 20px 10px;
+  float: left;
+  background-color: whitesmoke;
+}
+.profielholder.scenariotekst {
+  padding-right: 10px;
+  padding-left: 10px;
+  background-color: white;
+}
+.profielholder.scenariosuggestie {
+  margin-top: 20px;
+  padding-top: 0px;
+  padding-bottom: 5px;
+}
+.profielholder.scenariosuggestie.terughoudend {
+  background-color: #e8f3f6;
+}
+.profielholder.scenariosuggestie.beperkt {
+  background-color: #d1e6ed;
+}
+.profielholder.scenariosuggestie.ruimhartig {
+  background-color: #badae4;
+}
+.profielholder.scenariosuggestie.vooruitstrevend {
+  background-color: #a3cddb;
+}
+.profielholder.scenariointro {
+  height: auto;
+  padding-top: 0px;
+}
+.profieltekst {
+  margin-top: 10px;
+  color: #662f63;
+}
+.profieltekst.scenariointro {
+  color: #525252;
+  font-weight: 700;
+}
+.profieltekst.scenariotekst {
+  margin-top: 0px;
+  color: #525252;
+}
+.containerbreed {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+.holderbreed {
+  display: block;
+  width: 1024px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 20px 20px 10px;
+}
+.holderbreed.paars {
+  display: block;
+  width: 1024px;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: #853e82;
+}
+.holderbreed.wit {
+  display: block;
+  width: 1024px;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: white;
+}
+.holderbreed.witpaars {
+  background-color: #fffcff;
+}
+.holderbreed.blauw {
+  display: block;
+  width: 1024px;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: #8cc1d2;
+}
+.holderbreed.green {
+  display: block;
+  width: 1024px;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: #7e9261;
+}
+.holderbreed.wit2 {
+  width: auto;
+  margin-right: 20px;
+  margin-left: 20px;
+  background-color: white;
+}
+.holderbreed.darkblue {
+  background-color: #3d6892;
+}
+.inschrijfformulierwrapper {
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.veldlabel {
+  margin-bottom: 0px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  float: left;
+  color: #3d6892;
+}
+.invoerveld {
+  width: 60%;
+  margin-bottom: 0px;
+  float: left;
+  clear: both;
+  color: #3d6892;
+}
+.verstuurbutton {
+  margin-top: 20px;
+  padding: 10px 20px;
+  float: left;
+  clear: both;
+  background-color: #3d6892;
+  color: white;
+  font-size: 18px;
+  font-weight: 300;
+}
+.inschrijfformulierrow {
+  margin-bottom: 15px;
+}
+.inschrijfcolumn1 {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+.inschrijfcolumn2 {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+.heading1small {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: 22px;
+  line-height: 32px;
+}
+.fotoholder {
+  margin-bottom: 10px;
+}
+.fotoholder.scenariofoto {
+  width: 100%;
+  float: left;
+}
+.profielpercentage {
+  position: relative;
+  width: 25%;
+  margin-bottom: 0px;
+  padding: 10px 10px 12px;
+  float: left;
+  background-color: #8cc1d2;
+}
+.profielpercentage.grey {
+	background-color: #ddd;
+}
+.profielpercentage.scenarioscore {
+  width: auto;
+  height: 50px;
+  margin-bottom: 10px;
+  padding: 12px 20px 13px;
+  float: left;
+  background-color: #69919d;
+}
+.profielpercentagetekst {
+  color: white;
+  font-size: 18px;
+  line-height: 23px;
+  font-weight: 800;
+  text-align: center;
+}
+.profielheading {
+  position: relative;
+  width: 70%;
+  float: right;
+}
+.profielheader {
+  margin-top: 20px;
+}
+.eenregel {
+  margin-top: 10px;
+}
+.eenregel.blue {
+  color: #69919d;
+}
+.eenregel.blue.grey {
+	color:#ddd;
+}
+.homerowcolumn1 {
+  padding-right: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+}
+.homerowcolumn2 {
+  padding: 0px 20px 20px;
+}
+.headerholder {
+  width: 100%;
+}
+.progressbar {
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+.progressbar.uitkomst {
+  width: 10%;
+}
+.progressstapbig {
+  width: 234px;
+  height: 40px;
+  margin-right: 1px;
+  padding: 10px 20px;
+  float: left;
+  background-image: url('../images/progressBarFirst.svg');
+  background-repeat: no-repeat;
+}
+.progressstapbig.profiel {
+  width: 56px;
+  background-color: white;
+}
+.progressstapbig.profiel.bluebutton {
+  width: 63px;
+  background-color: #8cc1d2;
+  color: white;
+}
+.progressstapbig.active {
+  background-color: #575757;
+  color: white;
+}
+.progressstapbig.green {
+  background-color: #7e9261;
+  color: white;
+}
+.progressstapbig.paars {
+  background-color: #853e82;
+  color: white;
+}
+.progressstapbig.second {
+  margin-left: -25px;
+  padding-left: 40px;
+  background-image: url('../images/progresBarSecond.svg');
+}
+.progressstapbig.second.activesecond {
+  background-image: url('../images/progressBarSecondActive.svg');
+}
+.progressstapbig.second.activethird {
+  background-image: url('../images/progressBarThirdActive.svg');
+}
+.progressstapbig.activefirst {
+  background-image: url('../images/progressBarFirstActive.svg');
+}
+.progressbarheader {
+  margin-top: 0px;
+  margin-bottom: 5px;
+  color: black;
+}
+.progressbarheader.active {
+  color: white;
+}
+.progressbarheader.secondheader {
+  color: #7e9261;
+}
+.progressbarheader.thirdheader {
+  color: #8cc1d2;
+}
+.progressbarheader.firstheader {
+  color: white;
+}
+.progressbarheader.inactive {
+  color: #ceb2cd;
+}
+.progressbarheader.inactivemedia {
+  color: #cbd3c0;
+}
+.progressbartext {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 11px;
+  font-weight: 700;
+  text-align: center;
+}
+.progressbarholder {
+  display: block;
+  width: 1024px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 10px 20px 10px 0px;
+  background-color: #707070;
+}
+.blue {
+  padding-bottom: 0px;
+  color: #69919d;
+  font-size: 16px;
+}
+.blue.scenarioheader {
+  margin-bottom: 0px;
+}
+.blue.suggestieheader {
+  margin-top: 10px;
+  color: #466169;
+}
+.wit {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  color: white;
+}
+.home {
+  margin: 20px;
+  color: white;
+  font-size: 31px;
+}
+.unorderedlist {
+  margin-bottom: 20px;
+  padding-left: 30px;
+}
+.unorderedlist.scenario {
+  width: 100%;
+  margin-top: 20px;
+  color: #525252;
+}
+.unorderedlist.scenario.grey {
+	color:#aaa;
+}
+.unorderedlist.scenario.vastehoogte {
+  height: 185px;
+}
+.unorderedlist.scenariosuggestie {
+  margin-bottom: 10px;
+  padding-left: 20px;
+  color: #525252;
+}
+.unorderedlist.suggestie {
+  margin-bottom: 10px;
+}
+.scenario {
+  width: 60%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  float: left;
+  line-height: 40px;
+}
+.scenarioscoreholder {
+  width: 24%;
+  height: 80px;
+  padding-top: 15px;
+  padding-bottom: 10px;
+  float: right;
+  text-align: right;
+}
+.scenariouwscorer {
+  margin-right: 10px;
+  margin-bottom: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  float: left;
+  clear: left;
+  color: white;
+  font-size: 20px;
+  line-height: 30px;
+  text-align: left;
+}
+.scenariorow {
+  margin-top: 20px;
+}
+.scenariolistitem {
+  line-height: 22px;
+}
+.scenariocolumn2 {
+  padding-right: 0px;
+  padding-left: 10px;
+}
+.scenariocolumn1 {
+  padding-right: 10px;
+  padding-left: 0px;
+}
+.terugbutton {
+  height: 50px;
+  float: left;
+}
+.linkblock {
+  width: auto;
+  height: 60px;
+  margin-top: 10px;
+  margin-right: 20px;
+  padding: 5px 20px 5px 15px;
+  float: left;
+}
+.linkblock:hover {
+  background-color: #69919d;
+}
+.linkinline {
+  color: #82267d;
+  font-weight: 700;
+  text-decoration: underline;
+}
+.progresbarsmall {
+  width: 131px;
+  height: 30px;
+  padding: 5px 20px;
+  float: left;
+  background-image: url('../images/progressBarFirstSmall.svg');
+  background-repeat: no-repeat;
+}
+.progresbarsmall.second {
+  margin-left: -11px;
+  padding-right: 20px;
+  background-image: url('../images/progresBarSecondSmall.svg');
+}
+.progressbarheadersmall {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  color: #82267d;
+  font-weight: 700;
+}
+.progressbarheadersmall.inactive {
+  color: #dbdbdb;
+  font-weight: 400;
+}
+.progressbarheadersmall.paars {
+  color: #82267d;
+}
+.progressbarheadersmall.green {
+  color: #7e9261;
+}
+.logoholderbig {
+  width: 345px;
+  float: left;
+}
+.logoholdersmall {
+  width: 215px;
+  float: left;
+}
+.tekstlink {
+  margin-top: 20px;
+  float: left;
+  clear: left;
+  color: #82267d;
+  font-weight: 700;
+  text-decoration: underline;
+}
+.progresslinkblock {
+  float: left;
+}
+.progresslinkblock.w--current {
+  float: left;
+}
+.dropdownmenu {
+  width: 60%;
+  margin-bottom: 0px;
+  color: #999;
+}
+@media (max-width: 991px) {
+}
+@media (max-width: 767px) {
+}
+@media (max-width: 479px) {
+}
+
+
+th.rotate {
+  /* Something you can count on */
+  height: 140px;
+  white-space: nowrap;
+}
+
+th.rotate > div {
+  transform: 
+    /* Magic Numbers */
+    translate(25px, 51px)
+    /* 45 is really 360 - 45 */
+    rotate(315deg);
+  width: 30px;
+}
+th.rotate > div > span {
+  border-bottom: 1px solid #ccc;
+  padding: 5px 10px;
+}
+
+td.result {
+	padding:5px 10px;
+	
+}
+td.result.data {
+	border:1px solid #ccc;
+}

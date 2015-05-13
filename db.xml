@@ -1,0 +1,152 @@
+<?xml version="1.0"?>
+<schema version="0.3">
+	<table name="dglw_antwoorden">
+		<field name="aID" type="I">
+			<key />
+			<unsigned />
+			<autoincrement />
+			<notnull />		
+		</field>	
+		<field name="vID" type="I"></field>		
+		<field name="stelling" type="X"></field>		
+		<field name="weging" type="C" size="50"></field>		
+	</table>	
+	<!-- Scholen -->
+	<table name="dglw_enquetes">
+		<field name="eID" type="I">
+			<key />
+			<unsigned />
+			<autoincrement />
+			<notnull />		
+		</field>	
+		<field name="inschrijfID" type="I">
+		</field>
+		<field name="datum" type="I">
+		</field>
+		<field name="saved" type="I1">
+		</field>		
+	</table>
+	<!-- inschrijvers -->
+	<table name="dglw_inschrijvers">
+		<field name="inschrijfID" type="I">
+			<key />
+			<unsigned />
+			<autoincrement />
+			<notnull />		
+		</field>	
+		<field name="naam" type="C" size="255">
+		</field>
+		<field name="email" type="C" size="255">
+		</field>
+		<field name="lID" type="I"></field>
+		<field name="secID" type ="I"></field>
+	</table>
+	<!-- Locaties -->
+	<table name="dglw_locatie">
+		<field name="lID" type="I">
+			<key />
+			<unsigned />
+			<autoincrement />
+			<notnull />
+		</field>
+		<field name="naam" type="C" size="70">
+		</field>
+		<field name="sID" type="I" >
+			<notnull />
+		</field>
+	</table>
+	<!-- results tabel met resultaten -->
+	<table name="dglw_results">
+		<field name="rID" type="I">		
+			<key />
+			<unsigned />
+			<autoincrement />
+			<notnull />	
+		</field>				
+		<field name="aID" type="I">	
+		</field>	
+		<field name="eID" type="I">
+		</field>		
+		<field name="result" type="C" size="50"></field>
+	</table>
+	<!-- scholen, tabel met scholen. -->
+	<table name="dglw_scholen">
+		<field name="id" type="I">
+			<key />
+			<unsigned />
+			<autoincrement />
+			<notnull />
+		</field>
+		<field name="school" type="C" size="255"></field>
+		<field name="active" type="I1"></field>
+	</table>
+	<!-- sec loc, koppel tabel met secties per locatie -->
+	<table name="dglw_sec_loc">
+		<field name="sec_locID" type="I">
+			<key />
+			<unsigned />
+			<autoincrement />
+			<notnull />
+		</field>
+		<field name="secID" type="I">
+		</field>
+		<field name="locID" type="I">
+		</field>	
+	</table>
+	<!-- tabel met secties -->
+	<table name="dglw_secties">
+		<field name="secID" type="I">
+			<key />
+			<unsigned />
+			<autoincrement />
+			<notnull />		
+		</field>
+		<field name="sectienaam" type="C" size="255">
+		</field>
+	</table>
+	<table name="dglw_suggesties">
+		<field name="sugID" type="I">
+			<key />
+			<unsigned />
+			<autoincrement />
+			<notnull />					
+		</field>
+		<field name="sText" type="X"></field>
+		<field name="lText" type="X"></field>
+		<field name="code" type="C" size="5"></field>
+	</table>
+	<table name="dglw_vraag_groepen">
+		<field name="vgID" type="I">
+			<key />
+			<unsigned />
+			<autoincrement />
+			<notnull />			
+		</field>	
+		<field name="vg_naam" type="C" size="255">
+		</field>				
+		<field name="vg_intro" type="X">
+		</field>						
+		<field name="volgorde" type="I">
+		</field>						
+	</table>			
+	<table name="dglw_vragen">
+		<field name="vID" type="I">
+			<key />
+			<unsigned />
+			<autoincrement />
+			<notnull />		
+		</field>	
+		<field name="vgID" type="I">
+		</field>	
+		<field name="titel" type="C" size="255">
+		</field>		
+		<field name="subTitel" type="C" size="255">
+		</field>		
+		<field name="vraag" type="X">
+		</field>						
+		<field name="naam" type="C" size="50">
+		</field>
+		<field name="volgorde" type="I">
+		</field>						
+	</table>
+</schema>
