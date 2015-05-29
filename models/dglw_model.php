@@ -225,7 +225,9 @@ use Concrete\Package\Digileerwijzer\Models\DglwResult;
 			//print_r($pA);
 			$db=Loader::db();
 			
-			$q = "select inschrijfID from dglw_inschrijvers where email=? and lID=? and secID=? and saved=1";
+			$q = "select dglw_inschrijvers.inschrijfID from dglw_inschrijvers 
+					join dglw_enquetes on 	dglw_enquetes.inschrijfID = dglw_inschrijvers.inschrijfID
+					where email=? and lID=? and secID=? and saved=1";
 			$v = array($pA['email'],$pA['locatie'],$pA['sectie']);
 			$inschrijfID = $db->getOne($q,$v);
 
@@ -233,6 +235,7 @@ use Concrete\Package\Digileerwijzer\Models\DglwResult;
 			if ( $inschrijfID==FALSE) {
 				//nieuwe inschrijver maken.
 				$q = "insert into dglw_inschrijvers (naam,email,lID,secID) values (?,?,?,?)";
+				$v = array($pA['naam'],$pA['email'],$pA['locatie'],$pA['sectie']);
 				$r=$db->query($q,$v);
 				// inschrijver ID ophalen.
 				$inschrijfID=$db->Insert_ID();
@@ -285,11 +288,12 @@ use Concrete\Package\Digileerwijzer\Models\DglwResult;
 			$q="select eID from dglw_enquetes where inschrijfID=? and saved='1'";
 			$v=array($inschrijfID);
 			$r=$db->getOne($q,$v);
-			if ($r!==null) {
-				
+			
+		
+			if ($r!==false) {
+
 				return $r;
 			}
-			
 			
 			$q="insert into dglw_enquetes (inschrijfID,datum,saved) values (?,?,?)";
 			$v=array($inschrijfID,time(),0);
@@ -297,6 +301,8 @@ use Concrete\Package\Digileerwijzer\Models\DglwResult;
 			$r=$db->query($q,$v);
 			
 			$eID=$db->insert_ID();
+			
+			
 			return $eID;
 			
 			

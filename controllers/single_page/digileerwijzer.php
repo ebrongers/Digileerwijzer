@@ -400,6 +400,7 @@ class digileerwijzer extends PageController {
 			if ($eID==0)  {
 				$eID=$this->post('eID');
 				
+			
 				
 				if ($eID==0 || $eID===null) {
 					$eID=$_SESSION['eID'];

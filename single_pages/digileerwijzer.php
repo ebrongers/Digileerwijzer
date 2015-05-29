@@ -404,7 +404,8 @@ In de bijlage die u aan het eind in de vorm van een PDF krijgt, kunt u per onder
 		$mTv=$dG['best'];
 		?>
 		
-  			<p ><?php echo "<strong>".$mTv['value'].": ( ".$mTv['waarde']."% ): </strong>"; echo Concrete\Package\Digileerwijzer\Models\DglwResult::getSuggestiesText($mTv['value'],$detail);?></p>
+  			<p ><?php //echo "<strong>".$mTv['value'].": ( ".$mTv['waarde']."% ): </strong>"; 
+			echo Concrete\Package\Digileerwijzer\Models\DglwResult::getSuggestiesText($mTv['value'],$detail);?></p>
 
   		
   		
@@ -413,7 +414,8 @@ In de bijlage die u aan het eind in de vorm van een PDF krijgt, kunt u per onder
 		foreach ($dG['interest'] as $mTv):
 		?>
 		
-  			<p ><?php echo "<strong>".$mTv['value'].": ( ".$mTv['waarde']."% ): </strong>"; echo Concrete\Package\Digileerwijzer\Models\DglwResult::getSuggestiesText($mTv['value'],$detail);?></p>
+  			<p ><?php //echo "<strong>".$mTv['value'].": ( ".$mTv['waarde']."% ): </strong>"; 
+			echo Concrete\Package\Digileerwijzer\Models\DglwResult::getSuggestiesText($mTv['value'],$detail);?></p>
 
   		<?php endforeach;?>  		
   	</td>
@@ -812,7 +814,8 @@ In deze bijlage kunt u per onderdeel een verdergaande praktische invulling van d
 		$mTv=$dG['best'];
 		?>
 		
-  			<p ><?php echo "<strong>".$mTv['value'].": ( ".$mTv['waarde']."% ): </strong>"; echo Concrete\Package\Digileerwijzer\Models\DglwResult::getSuggestiesText($mTv['value'],$detail);?></p>
+  			<p ><?php //echo "<strong>".$mTv['value'].": ( ".$mTv['waarde']."% ): </strong>"; 
+			echo Concrete\Package\Digileerwijzer\Models\DglwResult::getSuggestiesText($mTv['value'],$detail);?></p>
 
   		
   		
@@ -821,7 +824,8 @@ In deze bijlage kunt u per onderdeel een verdergaande praktische invulling van d
 		foreach ($dG['interest'] as $mTv):
 		?>
 		
-  			<p ><?php echo "<strong>".$mTv['value'].": ( ".$mTv['waarde']."% ): </strong>"; echo Concrete\Package\Digileerwijzer\Models\DglwResult::getSuggestiesText($mTv['value'],$detail);?></p>
+  			<p ><?php //echo "<strong>".$mTv['value'].": ( ".$mTv['waarde']."% ): </strong>"; 
+			echo Concrete\Package\Digileerwijzer\Models\DglwResult::getSuggestiesText($mTv['value'],$detail);?></p>
 
   		<?php endforeach;?>  		
   	</td>
@@ -857,7 +861,8 @@ In deze bijlage kunt u per onderdeel een verdergaande praktische invulling van d
 		$mTv=$dG['best'];
 		?>
 		
-  			<p ><?php echo "<strong>".$mTv['value'].": ( ".$mTv['waarde']."% ): </strong>"; echo Concrete\Package\Digileerwijzer\Models\DglwResult::getSuggestiesText($mTv['value'],1);?></p>
+  			<p ><?php //echo "<strong>".$mTv['value'].": ( ".$mTv['waarde']."% ): </strong>"; 
+			echo Concrete\Package\Digileerwijzer\Models\DglwResult::getSuggestiesText($mTv['value'],1);?></p>
 
   		
   		
@@ -866,7 +871,8 @@ In deze bijlage kunt u per onderdeel een verdergaande praktische invulling van d
 		foreach ($dG['interest'] as $mTv):
 		?>
 		
-  			<p ><?php echo "<strong>".$mTv['value'].": ( ".$mTv['waarde']."% ): </strong>"; echo Concrete\Package\Digileerwijzer\Models\DglwResult::getSuggestiesText($mTv['value'],1);?></p>
+  			<p ><?php //echo "<strong>".$mTv['value'].": ( ".$mTv['waarde']."% ): </strong>"; 
+			echo Concrete\Package\Digileerwijzer\Models\DglwResult::getSuggestiesText($mTv['value'],1);?></p>
 
   		<?php endforeach;?>  		
   	</td>
