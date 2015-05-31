@@ -33,6 +33,35 @@ class Scholen extends DashboardPageController {
 		$this->requireAsset('redactor');		
 		$this->set("suggestie",$sA);
 	}
+	public function toevoegen() {
+		
+		
+	}
+	public function toevoegen_opslaan() {
+		$m=new DglwModel();
+		$naam=$this->post('naam');
+		$actief=$this->post('actief');
+		
+		$id=$m->newSchool($naam,$actief);
+
+		$this->set("schoolId",$id);
+		$this->set("school",$naam);
+		$this->set("actief",$actief);
+		//$this->locaties_wijzigen();
+		
+	}
+	
+	public function locaties_wijzigen() {
+		$m=new DglwModel();
+		
+		$sId=$this->post('schoolId');
+		
+		$m->addLocatie($this->post('locatienaam'),$sId);
+		
+		$this->set("schoolId",$sId);	
+		$this->set("locaties",$m->getLocaties($sId))	;
+		
+	}
 	
 	private function getSchool ($sID) {
 		$m=new DglwModel();

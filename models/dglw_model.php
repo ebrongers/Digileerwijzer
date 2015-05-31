@@ -43,6 +43,25 @@ use Concrete\Package\Digileerwijzer\Models\DglwResult;
 	
 			return $r;
 		}
+		public function newSchool($naam,$actief) {
+			$db=Loader::db();
+			$q="insert into dglw_scholen (school,active) values (?,?)" ;
+			$v=array($naam,$actief);
+			$db->query($q,$v);
+			
+			$id=$db->Insert_Id();	
+			return $id;
+				
+		}
+		public function addLocatie($locatienaam,$schoolid) {
+			$db=Loader::db();
+			$q="insert into dglw_locatie (naam,sID) values (?,?)" ;
+			$v=array($locatienaam,$schoolid);
+			$db->query($q,$v);
+				
+			$id=$db->Insert_Id();
+			return $id;
+		}
 		
 		static public function getSchool($sID) {
 			$db=Loader::db();
