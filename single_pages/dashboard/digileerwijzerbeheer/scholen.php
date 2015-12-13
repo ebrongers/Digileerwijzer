@@ -5,7 +5,7 @@ use Concrete\Core\Page\Page;
 switch ($controller->getAction()):
 case 'view':
 ?>
-<div><a class="btn btn-primary pull-right" type="submit"  href="<?=$this->action('toevoegen');?>">Toevoegen</a></div>
+<div><a class="btn btn-success pull-right" type="submit"  href="<?=$this->action('toevoegen');?>">Toevoegen</a></div>
 <div>
 	<ul>
 		<?php		foreach($scholen AS $KEY=>$school): ?>
@@ -23,9 +23,10 @@ break;
 case 'toevoegen': ?>
 Gegevens: <?php print_r($school['school']);?>
 <form action="<?=$this->action('toevoegen_opslaan')?>" method="post">
+<?php echo $form->hidden('sID',$school['id'])?>
 <table class="table">
 <tr>
-	<td>Naam</td><td><?php echo $form->text('naam');?></td>
+	<td>Naam</td><td><?php echo $form->text('naam',$school['school']);?></td>
 </tr>
 <tr>	
 	<td>Actief</td><td><?php echo $form->checkbox('actief',1,1);?></td>
@@ -37,6 +38,26 @@ Gegevens: <?php print_r($school['school']);?>
 <?php echo $form->submit($name, 'Opslaan', $tagAttributes, 'btn btn-primary');?>
 </form>
 <?php break;
+
+case 'locatie_toevoegen': ?>
+Gegevens: <?php print_r($school['school']);?>
+<form action="<?=$this->action('locatie_toevoegenOpslaan')?>" method="post">
+<?php echo $form->hidden('sID',$school['id'])?>
+<table class="table">
+<tr>
+	<td>Naam school</td><td><?php echo $school['school'];?></td>
+</tr>
+<tr>	
+	<td>Nieuwe locatie</td><td><?php echo $form->text('locatienaam');?></td>
+
+	</tr>
+	
+
+</table>
+<?php echo $form->submit('toevoegen', 'Toevoegen', $tagAttributes, 'btn btn-primary');?>
+</form>
+<?php break;
+
 case 'toevoegen_opslaan':
 case 'locaties_wijzigen':?>
 <div><a class="btn btn-primary pull-right" type="submit"  href="<?=$this->action('');?>">Terug</a></div>
@@ -48,6 +69,7 @@ case 'locaties_wijzigen':?>
 	<tr>
 		<th>Naam</th>
 		<th>Actief</th>
+	
 	</tr>
 	<tr>
 		<td><?php echo $school;?></td>
@@ -56,7 +78,7 @@ case 'locaties_wijzigen':?>
 	</table>
 	
 	<table class="table">
-	<tr><th>Locaties</th><th></th></tr>
+	<tr><th>Locaties</th><th></th><th></th></tr>
 	<?php if(is_array($locaties)):
 			foreach ($locaties as $locatie):?>
 		<tr><td></td>
@@ -72,8 +94,39 @@ case 'locaties_wijzigen':?>
 	</form>
 </div>	
 <?php break;	
+case 'locatieWijzigen':?>
+	<form action="<?=$this->action('locatieWijzigenOpslaan')?>" method="post">
+	<?php echo $form->hidden('sID',$sID)?>
+	<?php echo $form->hidden('lID',$locatie['lID'])?>
+	<table class="table">
+		<tr>
+			<td>Locatie naam</td><td><?php echo $form->text('naam',$locatie['naam']);?></td>
+		</tr>
+	
+
+
+	</table>
+	<?php echo $form->submit($name, 'Opslaan', $tagAttributes, 'btn btn-primary');?>
+	
+		<br />
+		<br />	<table class="table">
+		<tr>
+			<th>Secties koppelen<br><em>Selecteer hieronder de secties</em></i></th><td></td>
+		</tr>
+		
+		<?php foreach($secties as $sectie_id=>$sectie):?>
+		<tr>
+			<td><?php echo ($sectie);?></td>
+			<td><?php echo $form->checkbox('locatie['.$sectie_id.']',1);?></td>
+		</tr>
+		<?php endforeach;?>
+	</table>
+	<?php echo $form->submit($name, 'Opslaan', $tagAttributes, 'btn btn-primary');?>
+	</form>	
+
+<?php break;
 case 'detail':?>
-<div><a class="btn btn-primary pull-right" type="submit"  href="<?=$this->action('toevoegen');?>">Wijzigen</a></div>
+<div></div>
 <div  style="clear:both;height:50px;"></div>
 Gegevens van: <?php print_r($school['school']);?>
 
@@ -81,22 +134,31 @@ Gegevens van: <?php print_r($school['school']);?>
 <tr>
 	<th>Naam</th>
 	<th>Actief</th>
+		<th>&nbsp;</th>
 </tr>
 <tr>
 	<td><?php echo $school['school'];?></td>
 	<td><?php echo $school['active'];?></td>
-
+	<td><a class="btn btn-primary pull-right" type="submit"  href="<?=$this->action('toevoegen',$school['id']);?>"><i class="fa fa-pencil-square-o"></i> Wijzigen</a></td>
 </table>
-
+<br />
+<br />
 <table class="table">
-<tr><th>Locaties</th></tr>
+<tr><th>Locaties</th><th></th></tr>
 <?php foreach ($locaties as $locatie):?>
 	<tr>
 		<td>
 	<?php echo $locatie['naam']?>
 	</td>
+	<td><a class="btn btn-danger pull-right" type="submit"  href="<?=$this->action('locatie_verwijderen',$locatie['lID'],$school['id']);?>"><i class="fa fa-trash-o"></i> Verwijderen</a><a class="btn btn-primary pull-right" type="submit"  href="<?=$this->action('locatieWijzigen',$locatie['lID'],$school['id']);?>"><i class="fa fa-pencil-square-o"></i> Wijzigen</a>&nbsp;</td>	
 	</tr>
 <?php endforeach;?>
+	<tr>
+		<td>
+	
+	</td>
+	<td><a class="btn btn-success pull-right" type="submit"  href="<?=$this->action('locatie_toevoegen',$school['id']);?>">Locatie toevoegen</a></td>	
+	</tr>
 </table>
 <?php break;?>
 

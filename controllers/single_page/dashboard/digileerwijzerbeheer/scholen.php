@@ -33,20 +33,79 @@ class Scholen extends DashboardPageController {
 		$this->requireAsset('redactor');		
 		$this->set("suggestie",$sA);
 	}
-	public function toevoegen() {
+	public function toevoegen($sID=0) {
+		
+		if ($sID!=0)
+		{
+			
+			$m=$this->getSchool($sID);
+			$this->set('school',$m);
+		}
 		
 		
+	}
+	public function locatie_toevoegen($sID) {
+		$m=new DglwModel();
+		if ($sID!=0)
+		{
+				
+			$m=$this->getSchool($sID);
+			$this->set('school',$m);
+		}		
+
+	}
+	
+	public function locatie_toevoegenOpslaan() {
+		$locatieNaam=$this->post('locatienaam');
+		$sID=$this->post('sID');
+		if (strlen($locatieNaam) >0 ) {
+			$m=new DglwModel();
+			$m->addLocatie($locatieNaam,$sID);
+		}
+		$this->redirect('/dashboard/digileerwijzerbeheer/scholen/detail/'.$sID);
+	}
+	public function locatie_verwijderen($lID=0,$sID){
+		//23/7
+		$m=new DglwModel();
+		$m->deleteLocatie($lID,$sID);
+		$this->redirect('dashboard/digileerwijzerbeheer/scholen/detail/'.$sID);
+	}
+	public function locatieWijzigen($lID=0,$sID) {
+		$m=new DglwModel();
+		$this->set('locatie',$m->getLocatie($lID));
+		$this->set('secties',$m->getSecties());
+		$this->set('sID',$sID);
+		
+		
+	}
+	public function locatieWijzigenOpslaan() {
+		$m=new DglwModel();
+
+		$m->updateLocatie($this->post('naam'),$this->post('lID'));
+		$this->redirect('/dashboard/digileerwijzerbeheer/scholen/detail/'.$this->post('sID'));
 	}
 	public function toevoegen_opslaan() {
 		$m=new DglwModel();
 		$naam=$this->post('naam');
 		$actief=$this->post('actief');
+		$sID=$this->post('sID');
 		
-		$id=$m->newSchool($naam,$actief);
-
+		echo $sID;
+		if (isset($sID) && $sID!=0) {
+			$id=$sID;
+			$ns=$m->updateSchool($sID,$naam,$actief);
+			$this->redirect('/dashboard/digileerwijzerbeheer/scholen/detail',$id);
+			
+			
+		}
+		else {
+		
+			$id=$m->newSchool($naam,$actief);
+		}
 		$this->set("schoolId",$id);
 		$this->set("school",$naam);
 		$this->set("actief",$actief);
+		$this->set("locaties",$m->getLocaties($sId))	;
 		//$this->locaties_wijzigen();
 		
 	}

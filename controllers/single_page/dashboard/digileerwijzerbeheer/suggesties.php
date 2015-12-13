@@ -38,10 +38,15 @@ class Suggesties extends DashboardPageController {
 	}
 	public function saveSuggestie() {
 		$s=new DglwModel();
-		$suggestie['code']=$this->post('code');
-		$suggestie['sText']=$this->post('sText');
-		$suggestie['lText']=$this->post('lText');
+		$sugID=$this->post('sugID');
+		$sText=$this->post('sText');
+		$lText=$this->post('lText');
+		//print_r($this->post());die();
+		$s=new DglwModel();
 		
+		$s->updateSuggestie($sugID,$sText,$lText);
+		
+		$this->redirect('/dashboard/digileerwijzerbeheer/suggesties');
 		
 	}
 	

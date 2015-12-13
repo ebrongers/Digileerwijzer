@@ -56,7 +56,7 @@ class Controller extends Package
 	
 	public function configurePackage($pkg) {
 		PageTheme::add('digileerwijzer', $pkg);
-		//BlockType::installBlockTypeFromPackage('DigileerwijzerInlog', $pkg);
+		BlockType::installBlockTypeFromPackage('DigileerwijzerInlog', $pkg);
 		$this->addSinglePages($pkg);
 		$this->addDashboardPage($pkg);		
 		

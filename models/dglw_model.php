@@ -69,6 +69,19 @@ use Concrete\Package\Digileerwijzer\Models\DglwResult;
 			
 			return $res;
 		}
+		public function updateSchool($sID,$naam,$actief) {
+			$db=Loader::db();
+			$q="update dglw_scholen set school=?,active=?  where id=?";
+			$v=array($naam,$actief,$sID);
+			$db->query($q,$v);
+			return array("school"=>$naam,"id"=>$sID,"active"=>$actief);
+		}
+		public function deleteLocatie($lID,$sID) {
+			$db=Loader::db();
+			$q="delete from dglw_locatie where lID=? and sID=?";
+			$v=array($lID,$sID);
+			$db->query($q,$v);
+		}
 		
 		/**
 		 * Haal de locaties van een school uit de database.
@@ -79,6 +92,20 @@ use Concrete\Package\Digileerwijzer\Models\DglwResult;
 			$db=Loader::db();
 			$res=$db->fetchAll("select lID, naam from dglw_locatie where sID=?",array($sID));
 			return $res;
+		}
+		public function getLocatie($lID) {
+			$db=Loader::db();
+			$res=$db->getRow("select * from dglw_locatie where lID=?",array($lID));
+			
+			return $res;
+		}
+
+		
+		public function updateLocatie($naam,$lID) {
+			$db=Loader::db();
+			$q="update dglw_locatie set naam=? where lID=?";
+			$v=array($naam,$lID);
+			$r=$db->query($q,$v);			
 		}
 
 		/**
@@ -143,6 +170,15 @@ use Concrete\Package\Digileerwijzer\Models\DglwResult;
 
 			return $dglw_result->getSuggestieByCode($sugId);
 			
+			
+		}
+		
+		public function updateSuggestie($code, $sText='',$lText='')
+		{
+			$db=loader::db();
+			$q="update dglw_suggesties  set sText=?, lText=? where code=?";
+			$v=array($sText,$lText,$code);
+			$res=$db->execute($q,$v);
 			
 		}
 		

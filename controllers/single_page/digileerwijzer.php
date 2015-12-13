@@ -760,14 +760,14 @@ class digileerwijzer extends PageController {
 					$mTv=$dG['best'];
 					
 					
-			  			$html.="<strong>".$mTv['value'].": ( ".$mTv['waarde']."% ): </strong>". $this->makeClickableLinks(DglwResult::getSuggestiesText($mTv['value'],0));
+			  			$html.="<strong> ( ".$mTv['waarde']."% ): </strong>". $this->makeClickableLinks(DglwResult::getSuggestiesText($mTv['value'],0));
 			  						
 			  		
 			  		
 			  		$html.='<br /><br /><strong><em>Wat niet direct bij de visie past, maar mogelijk ook interessant is:</em></strong><br />';
 					
 					foreach ($dG['interest'] as $mTv):
-						$html.= "<strong>".$mTv['value'].": ( ".$mTv['waarde']."% ): </strong>". $this->makeClickableLinks(DglwResult::getSuggestiesText($mTv['value'],0));
+						$html.= "<strong> ( ".$mTv['waarde']."% ): </strong>". $this->makeClickableLinks(DglwResult::getSuggestiesText($mTv['value'],0));
 			
 			  		endforeach;  		
 			  	$html.='</td>';
@@ -815,14 +815,14 @@ class digileerwijzer extends PageController {
 			  $mTv=$dG['best'];
 			  	
 			  	
-			  $html.="<strong>".$mTv['value'].": ( ".$mTv['waarde']."% ): </strong>". $this->makeClickableLinks(DglwResult::getSuggestiesText($mTv['value'],1));
+			  $html.="<strong> ( ".$mTv['waarde']."% ): </strong>". $this->makeClickableLinks(DglwResult::getSuggestiesText($mTv['value'],1));
 			  	
 			   
 			   
 			  $html.='<br /><br /><strong><em>Wat niet direct bij de visie past, maar mogelijk ook interessant is:</em></strong><br />';
 			  	
 			  foreach ($dG['interest'] as $mTv):
-			  $html.= "<strong>".$mTv['value'].": ( ".$mTv['waarde']."% ): </strong>". $this->makeClickableLinks(DglwResult::getSuggestiesText($mTv['value'],1));
+			  $html.= "<strong> ( ".$mTv['waarde']."% ): </strong>". $this->makeClickableLinks(DglwResult::getSuggestiesText($mTv['value'],1));
 			  	
 			  endforeach;
 			  $html.='</td>';
