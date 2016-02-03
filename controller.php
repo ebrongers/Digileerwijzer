@@ -20,7 +20,7 @@ class Controller extends Package
 {
 	protected $pkgHandle = 'digileerwijzer';
 	protected $appVersionRequired = '5.7.1';
-	protected $pkgVersion = '201504170712';
+	protected $pkgVersion = '201602012028';
 	
 
 	

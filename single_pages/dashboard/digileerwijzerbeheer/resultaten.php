@@ -8,6 +8,7 @@ switch ($controller->getAction()):
 case 'view':
 
 ?>
+<a href="<?= BASE_URL.'/dashboard/digileerwijzerbeheer/resultaten/excel';?>" class="btn btn-primary"  >Export naar excel</a>
 <table class="table table-striped">
 		<thead>
 			<tr>

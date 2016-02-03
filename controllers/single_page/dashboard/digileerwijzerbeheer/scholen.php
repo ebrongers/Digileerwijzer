@@ -82,6 +82,8 @@ class Scholen extends DashboardPageController {
 		$m=new DglwModel();
 
 		$m->updateLocatie($this->post('naam'),$this->post('lID'));
+		
+		
 		$this->redirect('/dashboard/digileerwijzerbeheer/scholen/detail/'.$this->post('sID'));
 	}
 	public function toevoegen_opslaan() {
